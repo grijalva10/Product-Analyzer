@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ImportController.h"
 
 @implementation AppDelegate
 
@@ -16,7 +17,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    //self.importWindowController = [[importWindow alloc]initWithWindowNibName:@"importWindow"];
+   // [importWindow showWindow:self];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "codeSlider.Product_Analyzer" in the user's Application Support directory.
@@ -134,6 +136,11 @@
     }
 }
 
+
+
+
+
+
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
 {
     // Save changes in the application's managed object context before the application terminates.
@@ -180,4 +187,38 @@
     return NSTerminateNow;
 }
 
+- (IBAction)rulesButton:(NSToolbarItem *)sender {
+}
+
+- (IBAction)importButton:(NSToolbarItem *)sender {
+    
+   ImportController *aImportWindow = [[ImportController alloc]initWithWindowNibName:@"ImportController"];
+    [aImportWindow showWindow:self];
+}
+
+- (IBAction)exportButton:(NSToolbarItem *)sender {
+}
+
+- (IBAction)showImport:(id)sender{
+    if (!importController){
+        importController = [[ImportController alloc]initWithWindowNibName:@"Import"];
+    }
+    [importController showWindow:self];
+}
+
+- (IBAction)activateRulesSheet:(id)sender {
+    if (!_rulesSheet)
+        [NSBundle loadNibNamed:@"Rules" owner:self];
+    [NSApp beginSheet:self.rulesSheet
+       modalForWindow:[[NSApp delegate] window]
+        modalDelegate:self
+       didEndSelector:NULL
+          contextInfo:NULL];
+}
+
+- (IBAction)closeRules:(id)sender {
+    [NSApp endSheet:self.rulesSheet];
+    [self.rulesSheet close];
+    self.rulesSheet = nil;
+}
 @end
