@@ -8,15 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class ImportController;
-
-@interface AppDelegate : NSObject <NSApplicationDelegate> {
-@private ImportController *importController;
-}
+@interface AppDelegate : NSObject <NSApplicationDelegate> 
 
 @property (assign) IBOutlet NSWindow *window;
-@property (strong, nonatomic) ImportController * importWindowController;
 @property (assign) IBOutlet NSWindow *rulesSheet;
+@property (assign) IBOutlet NSWindow *importSheet;
 
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
@@ -25,14 +21,9 @@
 - (IBAction)saveAction:(id)sender;
 
 
-- (IBAction)showImport:(id)sender;
 
 
-- (IBAction)importButton:(NSToolbarItem *)sender;
-- (IBAction)exportButton:(NSToolbarItem *)sender;
-- (IBAction)rulesButton:(NSToolbarItem *)sender;
 
-- (IBAction)openRules:(id)sender;
-- (IBAction)closeRules:(id)sender;
+
 
 @end

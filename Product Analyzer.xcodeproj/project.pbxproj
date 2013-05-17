@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F20AC3017469E91005791AA /* importSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F20AC2F17469E91005791AA /* importSheet.xib */; };
 		22C278A2174433A300E299AC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C278A1174433A300E299AC /* Cocoa.framework */; };
 		22C278AC174433A300E299AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22C278AA174433A300E299AC /* InfoPlist.strings */; };
 		22C278AE174433A300E299AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C278AD174433A300E299AC /* main.m */; };
@@ -20,12 +21,11 @@
 		22C278CA17443EE000E299AC /* Export To Document.icns in Resources */ = {isa = PBXBuildFile; fileRef = 22C278C917443EE000E299AC /* Export To Document.icns */; };
 		22C278CC17443EE900E299AC /* Import Document.icns in Resources */ = {isa = PBXBuildFile; fileRef = 22C278CB17443EE900E299AC /* Import Document.icns */; };
 		22C278CE1744403200E299AC /* Terminal.icns in Resources */ = {isa = PBXBuildFile; fileRef = 22C278CD1744403200E299AC /* Terminal.icns */; };
-		22C278DE17455BCF00E299AC /* ImportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C278DC17455BCF00E299AC /* ImportController.m */; };
-		22C278DF17455BCF00E299AC /* Import.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22C278DD17455BCF00E299AC /* Import.xib */; };
 		22C278E11745623600E299AC /* Rules.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22C278E01745623600E299AC /* Rules.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F20AC2F17469E91005791AA /* importSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = importSheet.xib; sourceTree = "<group>"; };
 		22C2789E174433A300E299AC /* Product Analyzer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Product Analyzer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C278A1174433A300E299AC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		22C278A4174433A300E299AC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -46,9 +46,6 @@
 		22C278C917443EE000E299AC /* Export To Document.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Export To Document.icns"; sourceTree = "<group>"; };
 		22C278CB17443EE900E299AC /* Import Document.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Import Document.icns"; sourceTree = "<group>"; };
 		22C278CD1744403200E299AC /* Terminal.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Terminal.icns; sourceTree = "<group>"; };
-		22C278DB17455BCF00E299AC /* ImportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportController.h; sourceTree = "<group>"; };
-		22C278DC17455BCF00E299AC /* ImportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportController.m; sourceTree = "<group>"; };
-		22C278DD17455BCF00E299AC /* Import.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Import.xib; sourceTree = "<group>"; };
 		22C278E01745623600E299AC /* Rules.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Rules.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,21 +61,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		22C27895174433A300E299AC = {
+		1F20AC2E17469BEE005791AA /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				22C278DB17455BCF00E299AC /* ImportController.h */,
-				22C278DC17455BCF00E299AC /* ImportController.m */,
-				22C278DD17455BCF00E299AC /* Import.xib */,
-				22C278A7174433A300E299AC /* Product Analyzer */,
-				22C278A0174433A300E299AC /* Frameworks */,
-				22C2789F174433A300E299AC /* Products */,
 				22C278C317443D4600E299AC /* database-add.png */,
 				22C278C417443D4600E299AC /* database-remove.png */,
 				22C278C717443E6C00E299AC /* Add Appointment.icns */,
 				22C278C917443EE000E299AC /* Export To Document.icns */,
 				22C278CB17443EE900E299AC /* Import Document.icns */,
 				22C278CD1744403200E299AC /* Terminal.icns */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		1F20AC3117469F2C005791AA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				22C278B6174433A300E299AC /* MainMenu.xib */,
+				22C278E01745623600E299AC /* Rules.xib */,
+				1F20AC2F17469E91005791AA /* importSheet.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		1F20AC3217469F35005791AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22C278B9174433A300E299AC /* Product_Analyzer.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		22C27895174433A300E299AC = {
+			isa = PBXGroup;
+			children = (
+				22C278A7174433A300E299AC /* Product Analyzer */,
+				22C278A0174433A300E299AC /* Frameworks */,
+				22C2789F174433A300E299AC /* Products */,
+				1F20AC2E17469BEE005791AA /* Images */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,9 +134,8 @@
 			children = (
 				22C278B3174433A300E299AC /* AppDelegate.h */,
 				22C278B4174433A300E299AC /* AppDelegate.m */,
-				22C278B6174433A300E299AC /* MainMenu.xib */,
-				22C278E01745623600E299AC /* Rules.xib */,
-				22C278B9174433A300E299AC /* Product_Analyzer.xcdatamodeld */,
+				1F20AC3117469F2C005791AA /* Views */,
+				1F20AC3217469F35005791AA /* Model */,
 				22C278A8174433A300E299AC /* Supporting Files */,
 			);
 			path = "Product Analyzer";
@@ -194,8 +213,8 @@
 				22C278CA17443EE000E299AC /* Export To Document.icns in Resources */,
 				22C278CC17443EE900E299AC /* Import Document.icns in Resources */,
 				22C278CE1744403200E299AC /* Terminal.icns in Resources */,
-				22C278DF17455BCF00E299AC /* Import.xib in Resources */,
 				22C278E11745623600E299AC /* Rules.xib in Resources */,
+				1F20AC3017469E91005791AA /* importSheet.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +228,6 @@
 				22C278AE174433A300E299AC /* main.m in Sources */,
 				22C278B5174433A300E299AC /* AppDelegate.m in Sources */,
 				22C278BB174433A300E299AC /* Product_Analyzer.xcdatamodeld in Sources */,
-				22C278DE17455BCF00E299AC /* ImportController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +363,7 @@
 				22C278C0174433A300E299AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

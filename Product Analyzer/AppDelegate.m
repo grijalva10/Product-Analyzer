@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "ImportController.h"
 
 @implementation AppDelegate
 
@@ -187,24 +186,9 @@
     return NSTerminateNow;
 }
 
-- (IBAction)rulesButton:(NSToolbarItem *)sender {
-}
 
-- (IBAction)importButton:(NSToolbarItem *)sender {
-    
-   ImportController *aImportWindow = [[ImportController alloc]initWithWindowNibName:@"ImportController"];
-    [aImportWindow showWindow:self];
-}
 
-- (IBAction)exportButton:(NSToolbarItem *)sender {
-}
 
-- (IBAction)showImport:(id)sender{
-    if (!importController){
-        importController = [[ImportController alloc]initWithWindowNibName:@"Import"];
-    }
-    [importController showWindow:self];
-}
 
 - (IBAction)activateRulesSheet:(id)sender {
     if (!_rulesSheet)
@@ -220,5 +204,21 @@
     [NSApp endSheet:self.rulesSheet];
     [self.rulesSheet close];
     self.rulesSheet = nil;
+}
+
+- (IBAction)activateImportSheet:(id)sender {
+    if (!_importSheet) 
+        [NSBundle loadNibNamed:@"importSheet" owner:self];
+    [NSApp beginSheet:self.importSheet
+       modalForWindow:[[NSApp delegate] window]
+        modalDelegate:self
+       didEndSelector:NULL
+          contextInfo:NULL];
+}
+
+- (IBAction)closeImportSheet:(id)sender {
+    [NSApp endSheet:self.importSheet];
+    [self.importSheet close];
+    self.importSheet = nil;
 }
 @end
